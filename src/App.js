@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navbar from './views/Navbar';
@@ -14,26 +14,24 @@ import store from './store';
 
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <Navbar />
-          <Container>
-            <Heading>
-              <i className='fab fa-youtube'></i> Youtube Video Player
-            </Heading>
-            <SearchForm />
-            <Switch>
-              <Route exact path='/' component={VideosList} />
-              <Route exact path='/:id' component={VideoPlayer} />
-            </Switch>
-          </Container>
-        </Router>
-      </Provider>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Container>
+          <Heading>
+            <i className='fab fa-youtube'></i> Youtube Video Player
+          </Heading>
+          <SearchForm />
+          <Switch>
+            <Route exact path='/' component={VideosList} />
+            <Route exact path='/:id' component={VideoPlayer} />
+          </Switch>
+        </Container>
+      </Router>
+    </Provider>
+  );
+};
 
 export default App;

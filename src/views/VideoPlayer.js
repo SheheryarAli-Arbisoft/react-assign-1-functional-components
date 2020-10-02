@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import parser from 'html-react-parser';
 
@@ -18,58 +18,48 @@ import { getVideoIFrame, getFormattedTime } from '../utils';
 import { connect } from 'react-redux';
 import { getVideo, getAllRelatedVideos } from '../actions/video';
 
-class VideoPlayer extends Component {
-  componentDidMount() {
-    const { match, getVideo, getAllRelatedVideos } = this.props;
-
+const VideoPlayer = ({
+  video: { loading, video },
+  getVideo,
+  getAllRelatedVideos,
+  match,
+}) => {
+  useEffect(() => {
     getVideo(match.params.id);
     getAllRelatedVideos(match.params.id);
-  }
+  }, [match.params.id]);
 
-  componentDidUpdate(prevProps) {
-    const { match, getVideo, getAllRelatedVideos } = this.props;
+  return (
+    <Fragment>
+      <VideoPlayerSection>
+        <VideoSection>
+          {!loading && video && (
+            <Fragment>
+              {getVideoIFrame(video.embedHtml)}
+              <Title>{video.title}</Title>
+              <div>
+                <SubTitle>{video.channelTitle}</SubTitle>
+                <SubTitle>{getFormattedTime(video.publishedAt)}</SubTitle>
+              </div>
+              <Description full>
+                {parser(video.description.replaceAll('\n', '<br />'))}
+              </Description>
+            </Fragment>
+          )}
+        </VideoSection>
 
-    if (match.params.id !== prevProps.match.params.id) {
-      getVideo(match.params.id);
-      getAllRelatedVideos(match.params.id);
-    }
-  }
-
-  render() {
-    const { loading, video } = this.props.video;
-
-    return (
-      <Fragment>
-        <VideoPlayerSection>
-          <VideoSection>
-            {!loading && video && (
-              <Fragment>
-                {getVideoIFrame(video.embedHtml)}
-                <Title>{video.title}</Title>
-                <div>
-                  <SubTitle>{video.channelTitle}</SubTitle>
-                  <SubTitle>{getFormattedTime(video.publishedAt)}</SubTitle>
-                </div>
-                <Description full>
-                  {parser(video.description.replaceAll('\n', '<br />'))}
-                </Description>
-              </Fragment>
-            )}
-          </VideoSection>
-
-          <RelatedVideosSection>
-            <VideosList small />
-          </RelatedVideosSection>
-        </VideoPlayerSection>
-      </Fragment>
-    );
-  }
-}
+        <RelatedVideosSection>
+          <VideosList small />
+        </RelatedVideosSection>
+      </VideoPlayerSection>
+    </Fragment>
+  );
+};
 
 VideoPlayer.propTypes = {
   video: PropTypes.object.isRequired,
   getVideo: PropTypes.func.isRequired,
-  getAllVideos: PropTypes.func.isRequired,
+  getAllRelatedVideos: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
