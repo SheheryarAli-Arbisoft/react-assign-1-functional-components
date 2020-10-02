@@ -14,7 +14,7 @@ const VideoListItem = ({ video, small }) => {
   return (
     <Fragment>
       <Link to={`/${video.id}`}>
-        <ListItem>
+        <ListItem small={small}>
           <Thumbnail alt='' src={video.thumbnails.high.url} small={small} />
           <ListItemContent small={small}>
             <Title small={small}>{video.title}</Title>
