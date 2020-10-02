@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import parser from 'html-react-parser';
+import { connect } from 'react-redux';
 
 import VideosList from './VideosList';
 
@@ -15,14 +16,14 @@ import Description from '../components/Description';
 
 import { getVideoIFrame, getFormattedTime } from '../utils';
 
-import { connect } from 'react-redux';
 import { getVideo, getAllRelatedVideos } from '../actions/video';
 
 const VideoPlayer = ({
   video: { loading, video },
+  match,
+  /* eslint-disable no-shadow */
   getVideo,
   getAllRelatedVideos,
-  match,
 }) => {
   useEffect(() => {
     getVideo(match.params.id);
@@ -30,6 +31,7 @@ const VideoPlayer = ({
   }, [match.params.id]);
 
   return (
+    /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
       <VideoPlayerSection>
         <VideoSection>
@@ -57,12 +59,14 @@ const VideoPlayer = ({
 };
 
 VideoPlayer.propTypes = {
+  /* eslint-disable react/forbid-prop-types */
   video: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
   getVideo: PropTypes.func.isRequired,
   getAllRelatedVideos: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   video: state.video,
 });
 

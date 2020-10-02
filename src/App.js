@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import Navbar from './views/Navbar';
 import SearchForm from './views/SearchForm';
@@ -9,19 +10,20 @@ import VideoPlayer from './views/VideoPlayer';
 import Container from './components/Container';
 import Heading from './components/Heading';
 
-import { Provider } from 'react-redux';
 import store from './store';
 
 import './App.css';
 
 const App = () => {
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Provider store={store}>
       <Router>
         <Navbar />
         <Container>
           <Heading>
-            <i className='fab fa-youtube'></i> Youtube Video Player
+            <i className='fab fa-youtube' />
+            Youtube Video Player
           </Heading>
           <SearchForm />
           <Switch>

@@ -1,19 +1,20 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
+import { connect } from 'react-redux';
 
 import VideosListItem from './VideoListItem';
 
 import { List } from '../components/List';
 
-import { connect } from 'react-redux';
 import { getAllVideos } from '../actions/video';
 
 const VideosList = ({
   video: { loading, videos },
   small,
-  getAllVideos,
   location,
+  // eslint-disable-next-line no-shadow
+  getAllVideos,
 }) => {
   useEffect(() => {
     if (location) {
@@ -27,11 +28,12 @@ const VideosList = ({
   }, [location]);
 
   return (
+    /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
       <List small={small}>
         {!loading &&
           videos.length > 0 &&
-          videos.map((video) => (
+          videos.map(video => (
             <VideosListItem key={video.id} video={video} small={small} />
           ))}
       </List>
@@ -40,12 +42,14 @@ const VideosList = ({
 };
 
 VideosList.propTypes = {
+  /* eslint-disable react/forbid-prop-types, react/require-default-props */
   video: PropTypes.object.isRequired,
   small: PropTypes.bool,
+  location: PropTypes.object,
   getAllVideos: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   video: state.video,
 });
 

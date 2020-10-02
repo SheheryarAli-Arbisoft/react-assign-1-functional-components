@@ -12,6 +12,7 @@ import { getFormattedTime } from '../utils';
 
 const VideoListItem = ({ video, small }) => {
   return (
+    /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
       <Link to={`/${video.id}`}>
         <ListItem small={small}>
@@ -33,7 +34,9 @@ const VideoListItem = ({ video, small }) => {
 };
 
 VideoListItem.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   video: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/require-default-props
   small: PropTypes.bool,
 };
 

@@ -9,11 +9,11 @@ import Button from '../components/Button';
 const SearchForm = ({ history }) => {
   const [description, setDescription] = useState('');
 
-  const onChange = (e) => {
+  const onChange = e => {
     setDescription(e.target.value);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
 
     // Passing the description in the url
@@ -23,6 +23,7 @@ const SearchForm = ({ history }) => {
   };
 
   return (
+    /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
       <Form onSubmit={onSubmit}>
         <Input
@@ -39,6 +40,7 @@ const SearchForm = ({ history }) => {
 };
 
 SearchForm.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   history: PropTypes.object.isRequired,
 };
 
