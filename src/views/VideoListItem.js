@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Thumbnail from '../components/Thumbnail';
+import { Thumbnail } from '../components/Thumbnail';
 import Title from '../components/Title';
 import SubTitle from '../components/SubTitle';
 import Description from '../components/Description';

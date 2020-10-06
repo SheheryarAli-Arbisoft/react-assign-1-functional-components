@@ -14,6 +14,16 @@ const theme = {
       default: '16px',
     },
   },
+  thumbnail: {
+    normal: {
+      width: '256px',
+      height: '150px',
+    },
+    small: {
+      width: '120px',
+      height: '80px',
+    },
+  },
 };
 
 export default theme;
