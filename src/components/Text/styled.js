@@ -19,7 +19,8 @@ const Title = styled.div`
   font-size: ${({ theme, small }) =>
     small ? theme.size.text.default : theme.size.text.large};
   font-weight: bold;
-  margin-bottom: ${({ theme }) => theme.spacing.small};
+  margin-bottom: ${({ theme, small }) =>
+    small ? theme.spacing.small : theme.spacing.medium};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

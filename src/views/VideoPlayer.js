@@ -10,9 +10,7 @@ import {
   VideoSection,
   RelatedVideosSection,
 } from '../components/Section';
-import Title from '../components/Title';
-import SubTitle from '../components/SubTitle';
-import Description from '../components/Description';
+import { Title, SubTitle, Description } from '../components/Text';
 
 import { getVideoIFrame, getFormattedTime } from '../utils';
 
@@ -43,7 +41,7 @@ const VideoPlayer = ({
                 <SubTitle>{video.channelTitle}</SubTitle>
                 <SubTitle>{getFormattedTime(video.publishedAt)}</SubTitle>
               </div>
-              <Description full>
+              <Description>
                 {parser(video.description.replaceAll('\n', '<br />'))}
               </Description>
             </Fragment>
@@ -53,7 +51,7 @@ const VideoPlayer = ({
         <RelatedVideosSection>
           <VideosList small />
         </RelatedVideosSection>
-      </VideoPlayerSection>
+      </VideoPlayerSection>{' '}
     </Fragment>
   );
 };

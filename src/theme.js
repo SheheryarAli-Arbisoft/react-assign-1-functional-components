@@ -7,6 +7,10 @@ const theme = {
       secondary: '#5a5a5a',
       inverted: '#ffffff',
     },
+    card: {
+      background: '#ffffff',
+      border: '#c9c9c9',
+    },
   },
   spacing: {
     small: '6px',
