@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import parser from 'html-react-parser';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import VideosList from './VideosList';
 
@@ -16,8 +17,11 @@ import { getVideoIFrame, getFormattedTime } from '../utils';
 
 import { getVideo, getAllRelatedVideos } from '../actions/video';
 
+// Defining the selector for getting data from the state
+const getLoadingFromState = state => state.video.loading;
+const getVideoFromState = state => state.video.video;
+
 const VideoPlayer = ({
-  video: { loading, video },
   match,
   /* eslint-disable no-shadow */
   getVideo,
@@ -27,6 +31,17 @@ const VideoPlayer = ({
     getVideo(match.params.id);
     getAllRelatedVideos(match.params.id);
   }, [match.params.id]);
+
+  const videoSelector = createSelector(
+    getLoadingFromState,
+    getVideoFromState,
+    (loading, video) => ({
+      loading,
+      video,
+    })
+  );
+
+  const { loading, video } = useSelector(videoSelector);
 
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
@@ -51,23 +66,16 @@ const VideoPlayer = ({
         <RelatedVideosSection>
           <VideosList small />
         </RelatedVideosSection>
-      </VideoPlayerSection>{' '}
+      </VideoPlayerSection>
     </Fragment>
   );
 };
 
 VideoPlayer.propTypes = {
   /* eslint-disable react/forbid-prop-types */
-  video: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
   getVideo: PropTypes.func.isRequired,
   getAllRelatedVideos: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  video: state.video,
-});
-
-export default connect(mapStateToProps, { getVideo, getAllRelatedVideos })(
-  VideoPlayer
-);
+export default connect(null, { getVideo, getAllRelatedVideos })(VideoPlayer);

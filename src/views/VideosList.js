@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import VideosListItem from './VideoListItem';
 
@@ -9,8 +10,11 @@ import { List } from '../components/List';
 
 import { getAllVideos } from '../actions/video';
 
+// Defining the selector for getting data from the state
+const getLoadingFromState = state => state.video.loading;
+const getVideosFromState = state => state.video.videos;
+
 const VideosList = ({
-  video: { loading, videos },
   small,
   location,
   // eslint-disable-next-line no-shadow
@@ -26,6 +30,17 @@ const VideosList = ({
       }
     }
   }, [location]);
+
+  const videosSelector = createSelector(
+    getLoadingFromState,
+    getVideosFromState,
+    (loading, videos) => ({
+      loading,
+      videos,
+    })
+  );
+
+  const { loading, videos } = useSelector(videosSelector);
 
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
@@ -43,14 +58,9 @@ const VideosList = ({
 
 VideosList.propTypes = {
   /* eslint-disable react/forbid-prop-types, react/require-default-props */
-  video: PropTypes.object.isRequired,
   small: PropTypes.bool,
   location: PropTypes.object,
   getAllVideos: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  video: state.video,
-});
-
-export default connect(mapStateToProps, { getAllVideos })(VideosList);
+export default connect(null, { getAllVideos })(VideosList);
