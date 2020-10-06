@@ -8,6 +8,7 @@ const theme = {
   },
   spacing: {
     default: '8px',
+    large: '20px',
   },
   size: {
     text: {
