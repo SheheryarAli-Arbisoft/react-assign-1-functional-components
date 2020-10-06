@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { Thumbnail } from '../components/Thumbnail';
-// import Title from '../components/Title';
-import SubTitle from '../components/SubTitle';
-import Description from '../components/Description';
 import { ListItem, ListItemContent } from '../components/List';
-import { Title } from '../components/Text';
+import { Title, SubTitle, Description } from '../components/Text';
 
 import { getFormattedTime } from '../utils';
 

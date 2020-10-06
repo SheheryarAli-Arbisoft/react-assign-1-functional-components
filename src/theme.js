@@ -4,20 +4,24 @@ const theme = {
     hover: '#1a56b8',
     text: {
       primary: '#000000',
+      secondary: '#5a5a5a',
       inverted: '#ffffff',
     },
   },
   spacing: {
     small: '6px',
     default: '8px',
+    medium: '10px',
     large: '20px',
     xlarge: '30px',
   },
   size: {
     text: {
+      small: '14px',
       default: '16px',
+      medium: '18px',
+      large: '26px',
       heading: '54px',
-      title: '26px',
     },
   },
   thumbnail: {

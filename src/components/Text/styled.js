@@ -16,9 +16,8 @@ const Heading = styled.div`
 
 const Title = styled.div`
   color: ${({ theme }) => theme.color.text.primary};
-  font-size: ${props => (props.small ? '16' : '26')}px;
   font-size: ${({ theme, small }) =>
-    small ? theme.size.text.default : theme.size.text.title};
+    small ? theme.size.text.default : theme.size.text.large};
   font-weight: bold;
   margin-bottom: ${({ theme }) => theme.spacing.small};
   white-space: nowrap;
@@ -27,14 +26,17 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
-  color: #5a5a5a;
-  font-size: ${props => (props.small ? '14' : '18')}px;
-  margin-bottom: ${props => (props.small ? '6' : '10')}px;
+  color: ${({ theme }) => theme.color.text.secondary};
+  font-size: ${({ theme, small }) =>
+    small ? theme.size.text.small : theme.size.text.medium};
+  margin-bottom: ${({ theme, small }) =>
+    small ? theme.spacing.small : theme.spacing.medium};
 `;
 
 const Description = styled.div`
-  font-size: ${props => (props.small ? '14' : '18')}px;
-  color: #000000;
+  font-size: ${({ theme, small }) =>
+    small ? theme.size.text.small : theme.size.text.medium};
+  color: ${({ theme }) => theme.color.text.primary};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
