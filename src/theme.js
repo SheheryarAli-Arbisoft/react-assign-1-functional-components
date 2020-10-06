@@ -9,8 +9,8 @@ const theme = {
   spacing: {
     default: '8px',
   },
-  text: {
-    size: {
+  size: {
+    text: {
       default: '16px',
     },
   },

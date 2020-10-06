@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   box-sizing: border-box;
   padding: ${({ theme }) => theme.spacing.default};
-  font-size: ${({ theme }) => theme.text.size.default};
+  font-size: ${({ theme }) => theme.size.text.default};
   text-transform: uppercase;
   border-radius: 5px;
   border-style: solid;

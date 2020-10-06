@@ -8,8 +8,8 @@ const Form = styled.form`
   margin-bottom: 20px;
 
   & > input {
-    margin-right: 10px;
+    margin-right: ${({ theme }) => theme.spacing.default};
   }
 `;
 
-export default Form;
+export { Form };
