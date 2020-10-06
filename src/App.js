@@ -9,7 +9,7 @@ import VideosList from './views/VideosList';
 import VideoPlayer from './views/VideoPlayer';
 
 import { Container } from './components/Container';
-import Heading from './components/Heading';
+import { Heading } from './components/Text';
 
 import store from './store';
 import theme from './theme';
