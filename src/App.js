@@ -8,7 +8,7 @@ import SearchForm from './views/SearchForm';
 import VideosList from './views/VideosList';
 import VideoPlayer from './views/VideoPlayer';
 
-import Container from './components/Container';
+import { Container } from './components/Container';
 import Heading from './components/Heading';
 
 import store from './store';

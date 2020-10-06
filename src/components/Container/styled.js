@@ -6,4 +6,4 @@ const Container = styled.div`
   margin-right: auto;
 `;
 
-export default Container;
+export { Container };
