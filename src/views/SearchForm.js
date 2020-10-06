@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import Form from '../components/Form';
 import Input from '../components/Input';
-import Button from '../components/Button';
+import { Button } from '../components/Button';
 
 const SearchForm = ({ history }) => {
   const [description, setDescription] = useState('');
