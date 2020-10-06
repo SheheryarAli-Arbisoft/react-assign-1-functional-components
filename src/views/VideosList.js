@@ -29,6 +29,8 @@ const VideosList = ({
         getAllVideos(description);
       }
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   const videosSelector = createSelector(

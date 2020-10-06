@@ -30,6 +30,8 @@ const VideoPlayer = ({
   useEffect(() => {
     getVideo(match.params.id);
     getAllRelatedVideos(match.params.id);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.params.id]);
 
   const videoSelector = createSelector(
