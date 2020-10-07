@@ -10,9 +10,7 @@ import { List } from '../components/List';
 
 import { LOAD_ALL_VIDEOS } from '../sagas/types';
 
-// Defining the selector for getting data from the state
-const getLoadingFromState = state => state.video.loading;
-const getVideosFromState = state => state.video.videos;
+import { getLoadingSelector, getVideosSelector } from '../selectors/video';
 
 const VideosList = ({ dispatch, small, location }) => {
   useEffect(() => {
@@ -32,8 +30,8 @@ const VideosList = ({ dispatch, small, location }) => {
   }, [location]);
 
   const videosSelector = createSelector(
-    getLoadingFromState,
-    getVideosFromState,
+    getLoadingSelector,
+    getVideosSelector,
     (loading, videos) => ({
       loading,
       videos,

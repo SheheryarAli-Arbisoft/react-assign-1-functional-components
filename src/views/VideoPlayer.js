@@ -17,9 +17,7 @@ import { getVideoIFrame, getFormattedTime } from '../utils';
 
 import { LOAD_VIDEO, LOAD_ALL_RELATED_VIDEOS } from '../sagas/types';
 
-// Defining the selector for getting data from the state
-const getLoadingFromState = state => state.video.loading;
-const getVideoFromState = state => state.video.video;
+import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
 const VideoPlayer = ({ dispatch, match }) => {
   useEffect(() => {
@@ -39,8 +37,8 @@ const VideoPlayer = ({ dispatch, match }) => {
   }, [match.params.id]);
 
   const videoSelector = createSelector(
-    getLoadingFromState,
-    getVideoFromState,
+    getLoadingSelector,
+    getVideoSelector,
     (loading, video) => ({
       loading,
       video,
