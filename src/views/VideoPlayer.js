@@ -15,21 +15,25 @@ import { Title, SubTitle, Description } from '../components/Text';
 
 import { getVideoIFrame, getFormattedTime } from '../utils';
 
-import { getVideo, getAllRelatedVideos } from '../actions/video';
+import { LOAD_VIDEO, LOAD_ALL_RELATED_VIDEOS } from '../sagas/types';
 
 // Defining the selector for getting data from the state
 const getLoadingFromState = state => state.video.loading;
 const getVideoFromState = state => state.video.video;
 
-const VideoPlayer = ({
-  match,
-  /* eslint-disable no-shadow */
-  getVideo,
-  getAllRelatedVideos,
-}) => {
+const VideoPlayer = ({ dispatch, match }) => {
   useEffect(() => {
-    getVideo(match.params.id);
-    getAllRelatedVideos(match.params.id);
+    // Getting the current video
+    dispatch({
+      type: LOAD_VIDEO,
+      payload: match.params.id,
+    });
+
+    // Getting the related videos
+    dispatch({
+      type: LOAD_ALL_RELATED_VIDEOS,
+      payload: match.params.id,
+    });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.params.id]);
@@ -76,8 +80,6 @@ const VideoPlayer = ({
 VideoPlayer.propTypes = {
   /* eslint-disable react/forbid-prop-types */
   match: PropTypes.object.isRequired,
-  getVideo: PropTypes.func.isRequired,
-  getAllRelatedVideos: PropTypes.func.isRequired,
 };
 
-export default connect(null, { getVideo, getAllRelatedVideos })(VideoPlayer);
+export default connect(null, null)(VideoPlayer);
