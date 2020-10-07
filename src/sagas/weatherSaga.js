@@ -58,7 +58,7 @@ function* getAllVideos(action) {
 
   try {
     // Getting all the video results related to the description
-    let result = yield call(axios.get(generateSearchUrl(description)));
+    let result = yield call(() => axios.get(generateSearchUrl(description)));
 
     // Getting required data from response
     result = getRequiredVideosData(result.data);
@@ -72,7 +72,7 @@ function* getAllVideos(action) {
 
     yield put({
       type: VIDEO_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: err,
     });
   }
 }
@@ -88,7 +88,7 @@ function* getAllRelatedVideos(action) {
 
   try {
     // Getting all the videos related to the current video
-    let result = yield call(axios.get(generateRelatedVideosUrl(id)));
+    let result = yield call(() => axios.get(generateRelatedVideosUrl(id)));
 
     // Getting required data from response
     result = getRequiredVideosData(result.data);
@@ -134,7 +134,7 @@ function* getVideo(action) {
 
   try {
     // Getting the video related to the id
-    let result = yield call(axios.get(generateSingleVideoUrl(id)));
+    let result = yield call(() => axios.get(generateSingleVideoUrl(id)));
 
     // Getting the required data from the response
     result = getRequiredSingleVideoData(result.data.items[0]);

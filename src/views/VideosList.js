@@ -8,25 +8,23 @@ import VideosListItem from './VideoListItem';
 
 import { List } from '../components/List';
 
-import { getAllVideos } from '../actions/video';
+import { LOAD_ALL_VIDEOS } from '../sagas/types';
 
 // Defining the selector for getting data from the state
 const getLoadingFromState = state => state.video.loading;
 const getVideosFromState = state => state.video.videos;
 
-const VideosList = ({
-  small,
-  location,
-  // eslint-disable-next-line no-shadow
-  getAllVideos,
-}) => {
+const VideosList = ({ dispatch, small, location }) => {
   useEffect(() => {
     if (location) {
       // Getting the search paramters from the url
       const description = queryString.parse(location.search).q;
 
       if (description) {
-        getAllVideos(description);
+        dispatch({
+          type: LOAD_ALL_VIDEOS,
+          payload: description,
+        });
       }
     }
 
@@ -62,7 +60,6 @@ VideosList.propTypes = {
   /* eslint-disable react/forbid-prop-types, react/require-default-props */
   small: PropTypes.bool,
   location: PropTypes.object,
-  getAllVideos: PropTypes.func.isRequired,
 };
 
-export default connect(null, { getAllVideos })(VideosList);
+export default connect(null, null)(VideosList);
