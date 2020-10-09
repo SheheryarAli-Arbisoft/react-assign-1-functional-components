@@ -9,7 +9,8 @@ import {
   RelatedVideosSection,
 } from '../components/Section';
 import { Title, SubTitle, Description } from '../components/Text';
-import { getVideoIFrame, getFormattedTime } from '../utils';
+import { Frame } from '../components/Frame';
+import { getFormattedTime } from '../utils';
 import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
@@ -36,7 +37,7 @@ export const VideoPlayer = ({ match }) => {
         <VideoSection>
           {!loading && video && (
             <Fragment>
-              {getVideoIFrame(video.embedHtml)}
+              <Frame title={video.title} embedHtml={video.embedHtml} />
               <Title>{video.title}</Title>
               <div>
                 <SubTitle>{video.channelTitle}</SubTitle>

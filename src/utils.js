@@ -2,27 +2,6 @@ import React, { Fragment } from 'react';
 
 /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
 
-// Getting the video iframe
-export const getVideoIFrame = embedHtml => {
-  let videoUrl = embedHtml.split(' ')[3];
-  videoUrl = `https:/${videoUrl.slice(6, -1)}`;
-
-  return (
-    <Fragment>
-      <iframe
-        title='videoFrame'
-        width='100%'
-        height='500px'
-        style={{ marginBottom: '20px' }}
-        src={videoUrl}
-        frameBorder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowFullScreen
-      />
-    </Fragment>
-  );
-};
-
 // Get formatted video time
 export const getFormattedTime = dateString => {
   const time = new Date(dateString);
