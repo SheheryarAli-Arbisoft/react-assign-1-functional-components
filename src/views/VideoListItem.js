@@ -6,7 +6,7 @@ import { ListItem, ListItemContent } from '../components/List';
 import { Title, SubTitle, Description } from '../components/Text';
 import { getFormattedTime } from '../utils';
 
-const VideoListItem = ({ video, small }) => {
+export const VideoListItem = ({ video, small }) => {
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
@@ -35,5 +35,3 @@ VideoListItem.propTypes = {
   // eslint-disable-next-line react/require-default-props
   small: PropTypes.bool,
 };
-
-export default VideoListItem;

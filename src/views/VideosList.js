@@ -2,12 +2,12 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { useSelector, useDispatch } from 'react-redux';
-import VideosListItem from './VideoListItem';
+import { VideoListItem } from './VideoListItem';
 import { List } from '../components/List';
 import { getLoadingSelector, getVideosSelector } from '../selectors/video';
 import { loadAllVideos } from '../actions/weather';
 
-const VideosList = ({ small, location }) => {
+export const VideosList = ({ small, location }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const VideosList = ({ small, location }) => {
         {!loading &&
           videos.length > 0 &&
           videos.map(video => (
-            <VideosListItem key={video.id} video={video} small={small} />
+            <VideoListItem key={video.id} video={video} small={small} />
           ))}
       </List>
     </Fragment>
@@ -45,5 +45,3 @@ VideosList.propTypes = {
   small: PropTypes.bool,
   location: PropTypes.object,
 };
-
-export default VideosList;

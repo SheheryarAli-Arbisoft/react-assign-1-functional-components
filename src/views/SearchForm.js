@@ -5,7 +5,7 @@ import { Form } from '../components/Form';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 
-const SearchForm = ({ history }) => {
+const SearchFormComponent = ({ history }) => {
   const [description, setDescription] = useState('');
 
   const onChange = e => {
@@ -38,9 +38,9 @@ const SearchForm = ({ history }) => {
   );
 };
 
-SearchForm.propTypes = {
+SearchFormComponent.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   history: PropTypes.object.isRequired,
 };
 
-export default withRouter(SearchForm);
+export const SearchForm = withRouter(SearchFormComponent);

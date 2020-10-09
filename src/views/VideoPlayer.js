@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import parser from 'html-react-parser';
 import { useSelector, useDispatch } from 'react-redux';
-import VideosList from './VideosList';
+import { VideosList } from './VideosList';
 import {
   VideoPlayerSection,
   VideoSection,
@@ -13,7 +13,7 @@ import { getVideoIFrame, getFormattedTime } from '../utils';
 import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
-const VideoPlayer = ({ match }) => {
+export const VideoPlayer = ({ match }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -61,5 +61,3 @@ VideoPlayer.propTypes = {
   /* eslint-disable react/forbid-prop-types */
   match: PropTypes.object.isRequired,
 };
-
-export default VideoPlayer;

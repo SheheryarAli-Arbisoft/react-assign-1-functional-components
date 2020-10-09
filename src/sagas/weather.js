@@ -8,7 +8,7 @@ import {
   LOAD_VIDEO,
   VIDEO_LOADED,
   VIDEO_ERROR,
-} from './types';
+} from '../actions/types';
 
 const API_KEY = 'AIzaSyA6vjCwXxs-wFd7_Hr0eFA6YuHYX7INahM';
 
@@ -154,10 +154,8 @@ function* getVideo(action) {
 }
 
 // This is the watcher which listens for all the different types of actions
-function* weatherSaga() {
+export function* weatherSaga() {
   yield takeEvery(LOAD_ALL_VIDEOS, getAllVideos);
   yield takeEvery(LOAD_ALL_RELATED_VIDEOS, getAllRelatedVideos);
   yield takeEvery(LOAD_VIDEO, getVideo);
 }
-
-export default weatherSaga;

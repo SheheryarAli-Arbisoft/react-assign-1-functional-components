@@ -3,7 +3,7 @@ import {
   VIDEO_LOADED,
   ALL_RELATED_VIDEOS_LOADED,
   VIDEO_ERROR,
-} from '../sagas/types';
+} from '../actions/types';
 
 const initialState = {
   video: null,
