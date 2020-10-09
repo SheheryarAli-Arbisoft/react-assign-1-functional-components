@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import parser from 'html-react-parser';
-import { videoPropTypes, videoDefultProps } from './props';
-import { Frame } from '../Frame';
-import { Title, SubTitle, Description } from '../Text';
-import { getFormattedTime } from '../../utils';
+import { Frame } from '../components/Frame';
+import { Title, SubTitle, Description } from '../components/Text';
+import { getFormattedTime } from '../utils';
 
 export const Video = ({ video }) => {
   return (
@@ -21,5 +21,7 @@ export const Video = ({ video }) => {
   );
 };
 
-Video.propTypes = videoPropTypes;
-Video.defaultProps = videoDefultProps;
+Video.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  video: PropTypes.object.isRequired,
+};
