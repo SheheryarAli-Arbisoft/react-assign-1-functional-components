@@ -2,8 +2,11 @@ import React from 'react';
 
 import { VideoPlayerSection as CustomVideoPlayerSection } from './styled';
 
-const VideoPlayerSection = ({ children }) => {
+import { propTypes, defaultProps } from './props';
+
+export const VideoPlayerSection = ({ children }) => {
   return <CustomVideoPlayerSection>{children}</CustomVideoPlayerSection>;
 };
 
-export default VideoPlayerSection;
+VideoPlayerSection.propTypes = propTypes;
+VideoPlayerSection.defaultProps = defaultProps;

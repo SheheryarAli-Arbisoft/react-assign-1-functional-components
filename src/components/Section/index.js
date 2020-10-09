@@ -1,5 +1,3 @@
-import VideoPlayerSection from './VideoPlayerSection';
-import VideoSection from './VideoSection';
-import RelatedVideosSection from './RelatedVideosSection';
-
-export { VideoPlayerSection, VideoSection, RelatedVideosSection };
+export { VideoPlayerSection } from './VideoPlayerSection';
+export { VideoSection } from './VideoSection';
+export { RelatedVideosSection } from './RelatedVideosSection';

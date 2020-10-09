@@ -2,8 +2,11 @@ import React from 'react';
 
 import { RelatedVideosSection as CustomRelatedVideosSection } from './styled';
 
-const RelatedVideosSection = ({ children }) => {
+import { propTypes, defaultProps } from './props';
+
+export const RelatedVideosSection = ({ children }) => {
   return <CustomRelatedVideosSection>{children}</CustomRelatedVideosSection>;
 };
 
-export default RelatedVideosSection;
+RelatedVideosSection.propTypes = propTypes;
+RelatedVideosSection.defaultProps = defaultProps;

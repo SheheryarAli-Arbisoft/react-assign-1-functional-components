@@ -1,5 +1,3 @@
-import List from './List';
-import ListItem from './ListItem';
-import ListItemContent from './ListItemContent';
-
-export { List, ListItem, ListItemContent };
+export { List } from './List';
+export { ListItem } from './ListItem';
+export { ListItemContent } from './ListItemContent';

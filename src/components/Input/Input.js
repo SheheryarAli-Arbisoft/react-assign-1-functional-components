@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Input as CustomInput } from './styled';
 
-const Input = ({ ...rest }) => {
+import { propTypes, defaultProps } from './props';
+
+export const Input = ({ ...rest }) => {
   return <CustomInput {...rest} />;
 };
 
-export default Input;
+Input.propTypes = propTypes;
+Input.defaultProps = defaultProps;

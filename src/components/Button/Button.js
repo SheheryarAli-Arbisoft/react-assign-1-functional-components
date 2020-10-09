@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Button as CustomButton } from './styled';
 
-const Button = ({ children, ...rest }) => {
+import { propTypes, defaultProps } from './props';
+
+export const Button = ({ children, ...rest }) => {
   return <CustomButton {...rest}>{children}</CustomButton>;
 };
 
-export default Button;
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;

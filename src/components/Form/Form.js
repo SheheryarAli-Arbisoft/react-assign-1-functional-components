@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Form as CustomForm } from './styled';
 
-const Form = ({ children, ...rest }) => {
+import { propTypes, defaultProps } from './props';
+
+export const Form = ({ children, ...rest }) => {
   return <CustomForm {...rest}>{children}</CustomForm>;
 };
 
-export default Form;
+Form.propTypes = propTypes;
+Form.defaultProps = defaultProps;

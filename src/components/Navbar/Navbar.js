@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Navbar as CustomNavbar } from './styled';
 
-const Navbar = ({ children, ...rest }) => {
+import { propTypes, defaultProps } from './props';
+
+export const Navbar = ({ children, ...rest }) => {
   return <CustomNavbar {...rest}>{children}</CustomNavbar>;
 };
 
-export default Navbar;
+Navbar.propTypes = propTypes;
+Navbar.defaultProps = defaultProps;

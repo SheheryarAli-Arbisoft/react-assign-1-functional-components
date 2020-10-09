@@ -1,4 +1,2 @@
-import Navbar from './Navbar';
-import NavbarBrand from './NavbarBrand';
-
-export { Navbar, NavbarBrand };
+export { Navbar } from './Navbar';
+export { NavbarBrand } from './NavbarBrand';

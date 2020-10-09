@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Container as CustomContainer } from './styled';
 
-const Container = ({ children, ...rest }) => {
+import { propTypes, defaultProps } from './props';
+
+export const Container = ({ children, ...rest }) => {
   return <CustomContainer {...rest}>{children}</CustomContainer>;
 };
 
-export default Container;
+Container.propTypes = propTypes;
+Container.defaultProps = defaultProps;
