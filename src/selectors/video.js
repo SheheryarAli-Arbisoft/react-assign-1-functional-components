@@ -1,10 +1,21 @@
+import { createSelector } from 'reselect';
+
 // Get the loading property from the video state
-const getLoadingSelector = state => state.video.loading;
+const getLoadingSelector = createSelector(
+  state => state.video.loading,
+  loading => loading
+);
 
 // Get the video property from the video state
-const getVideoSelector = state => state.video.video;
+const getVideoSelector = createSelector(
+  state => state.video.video,
+  video => video
+);
 
 // Get the videos property from the video state
-const getVideosSelector = state => state.video.videos;
+const getVideosSelector = createSelector(
+  state => state.video.videos,
+  videos => videos
+);
 
 export { getLoadingSelector, getVideoSelector, getVideosSelector };

@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
 import { Form } from '../components/Form';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';

@@ -2,15 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-
 import Navbar from './views/Navbar';
 import SearchForm from './views/SearchForm';
 import VideosList from './views/VideosList';
 import VideoPlayer from './views/VideoPlayer';
-
 import { Container } from './components/Container';
 import { Heading } from './components/Text';
-
 import store from './store';
 import theme from './theme';
 

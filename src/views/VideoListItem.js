@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import { Thumbnail } from '../components/Thumbnail';
 import { ListItem, ListItemContent } from '../components/List';
 import { Title, SubTitle, Description } from '../components/Text';
-
 import { getFormattedTime } from '../utils';
 
 const VideoListItem = ({ video, small }) => {

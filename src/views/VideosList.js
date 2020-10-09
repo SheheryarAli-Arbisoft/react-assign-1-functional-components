@@ -1,44 +1,30 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
-import { connect, useSelector } from 'react-redux';
-import { createSelector } from 'reselect';
-
+import { useSelector, useDispatch } from 'react-redux';
 import VideosListItem from './VideoListItem';
-
 import { List } from '../components/List';
-
-import { LOAD_ALL_VIDEOS } from '../sagas/types';
-
 import { getLoadingSelector, getVideosSelector } from '../selectors/video';
+import { loadAllVideos } from '../actions/weather';
 
-const VideosList = ({ dispatch, small, location }) => {
+const VideosList = ({ small, location }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (location) {
       // Getting the search paramters from the url
       const description = queryString.parse(location.search).q;
 
       if (description) {
-        dispatch({
-          type: LOAD_ALL_VIDEOS,
-          payload: description,
-        });
+        dispatch(loadAllVideos(description));
       }
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
-  const videosSelector = createSelector(
-    getLoadingSelector,
-    getVideosSelector,
-    (loading, videos) => ({
-      loading,
-      videos,
-    })
-  );
-
-  const { loading, videos } = useSelector(videosSelector);
+  const loading = useSelector(getLoadingSelector);
+  const videos = useSelector(getVideosSelector);
 
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
@@ -60,4 +46,4 @@ VideosList.propTypes = {
   location: PropTypes.object,
 };
 
-export default connect(null, null)(VideosList);
+export default VideosList;
