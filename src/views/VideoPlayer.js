@@ -1,16 +1,13 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import parser from 'html-react-parser';
 import { useSelector, useDispatch } from 'react-redux';
 import { VideosList } from './VideosList';
 import {
   VideoPlayerSection,
   VideoSection,
   RelatedVideosSection,
+  Video,
 } from '../components/Section';
-import { Title, SubTitle, Description } from '../components/Text';
-import { Frame } from '../components/Frame';
-import { getFormattedTime } from '../utils';
 import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
@@ -35,19 +32,7 @@ export const VideoPlayer = ({ match }) => {
     <Fragment>
       <VideoPlayerSection>
         <VideoSection>
-          {!loading && video && (
-            <Fragment>
-              <Frame title={video.title} embedHtml={video.embedHtml} />
-              <Title>{video.title}</Title>
-              <div>
-                <SubTitle>{video.channelTitle}</SubTitle>
-                <SubTitle>{getFormattedTime(video.publishedAt)}</SubTitle>
-              </div>
-              <Description>
-                {parser(video.description.replaceAll('\n', '<br />'))}
-              </Description>
-            </Fragment>
-          )}
+          {!loading && video && <Video video={video} />}
         </VideoSection>
 
         <RelatedVideosSection>

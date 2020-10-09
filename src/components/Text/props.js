@@ -5,8 +5,23 @@ const propTypes = {
   children: PropTypes.object,
 };
 
+const descriptionPropTypes = {
+  ...propTypes,
+  full: PropTypes.bool,
+};
+
 const defaultProps = {
   small: false,
 };
 
-export { propTypes, defaultProps };
+const descriptionDefaultProps = {
+  ...defaultProps,
+  full: false,
+};
+
+export {
+  propTypes,
+  descriptionPropTypes,
+  defaultProps,
+  descriptionDefaultProps,
+};

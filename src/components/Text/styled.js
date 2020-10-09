@@ -38,7 +38,7 @@ const Description = styled.div`
   font-size: ${({ theme, small }) =>
     small ? theme.size.text.small : theme.size.text.medium};
   color: ${({ theme }) => theme.color.text.primary};
-  white-space: nowrap;
+  white-space: ${({ full }) => (full ? 'none' : 'nowrap')};
   overflow: hidden;
   text-overflow: ellipsis;
 `;
