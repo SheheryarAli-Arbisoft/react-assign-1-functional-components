@@ -5,7 +5,7 @@ const infoColor = '#1bacbf';
 const dangerColor = '#bf441b';
 const defaultColor = '#ededed';
 const primaryTextColor = '#000000';
-const secondaryTextColor = '#5a5a5a';
+const secondaryTextColor = '#7a7a7a';
 const headingTextColor = '#ff0000';
 
 // Hover colors
@@ -153,7 +153,7 @@ export const theme = {
       switch (variant) {
         case 'heading':
           return headingTextColor;
-        case 'secondary':
+        case 'subtitle':
           return secondaryTextColor;
         default:
           return primaryTextColor;
