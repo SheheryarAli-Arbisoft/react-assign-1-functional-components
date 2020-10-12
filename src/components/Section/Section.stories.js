@@ -3,8 +3,6 @@ import { VideoPlayer } from './VideoPlayer';
 import { Video } from './Video';
 import { RelatedVideos } from './RelatedVideos';
 import { List, ListItem } from '../List';
-import { Thumbnail } from '../Thumbnail';
-import { Text } from '../Text';
 
 export default {
   title: 'Section',
