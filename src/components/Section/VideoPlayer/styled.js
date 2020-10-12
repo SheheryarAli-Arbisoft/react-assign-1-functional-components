@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const VideoPlayerSection = styled.div`
+export const VideoPlayer = styled.div`
   display: flex;
 `;

@@ -2,8 +2,11 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { VideosList } from './VideosList';
-import { Video } from './Video';
-import { VideoPlayer, Video, RelatedVideos } from '../components/Section';
+import {
+  VideoPlayer as CustomVideoPlayer,
+  Video,
+  RelatedVideos,
+} from '../components/Section';
 import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
@@ -26,15 +29,13 @@ export const VideoPlayer = ({ match }) => {
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
-      <VideoPlayerSection>
-        <VideoSection>
-          {!loading && video && <Video video={video} />}
-        </VideoSection>
+      <CustomVideoPlayer>
+        {!loading && video && <Video video={video} />}
 
-        <RelatedVideosSection>
+        <RelatedVideos>
           <VideosList small />
-        </RelatedVideosSection>
-      </VideoPlayerSection>
+        </RelatedVideos>
+      </CustomVideoPlayer>
     </Fragment>
   );
 };

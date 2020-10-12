@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.array,
+  video: PropTypes.object,
 };
 
 const defaultProps = {
-  children: [],
+  video: {
+    title: '',
+    embedHtml: '',
+    channelTitle: '',
+    publishedAt: '',
+    description: '',
+  },
 };
 
 export { propTypes, defaultProps };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar } from './Navbar';
 import { NavbarBrand } from './NavbarBrand';
-import { Container } from '../Container';
 import { theme } from '../../theme';
 
 export default {
