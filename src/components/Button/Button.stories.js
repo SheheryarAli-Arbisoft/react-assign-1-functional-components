@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './Button';
-import { theme } from '../../theme';
 
 export default {
   title: 'Button',
@@ -10,7 +9,6 @@ export default {
 const Template = args => <Button {...args} />;
 
 const defaultArgs = {
-  theme,
   children: 'Button',
 };
 

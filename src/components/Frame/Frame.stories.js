@@ -8,8 +8,8 @@ export default {
 };
 
 const Template = args => <Frame {...args} />;
+
 const defaultArgs = {
-  theme,
   embedHtml:
     '<iframe width="480" height="270" src="//www.youtube.com/embed/Qqx_wzMmFeA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
 };

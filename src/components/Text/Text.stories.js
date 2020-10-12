@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text } from './Text';
-import { theme } from '../../theme';
 
 export default {
   title: 'Text',
@@ -10,7 +9,6 @@ export default {
 const Template = args => <Text {...args} />;
 
 const defaultArgs = {
-  theme,
   children: 'Text',
 };
 

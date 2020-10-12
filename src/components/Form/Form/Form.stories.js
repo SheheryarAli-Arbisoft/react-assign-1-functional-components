@@ -2,7 +2,6 @@ import React from 'react';
 import { Form } from './Form';
 import { Input } from '../Input';
 import { Button } from '../../Button';
-import { theme } from '../../../theme';
 
 export default {
   title: 'Form',
@@ -12,12 +11,9 @@ export default {
 const Template = args => <Form {...args} />;
 
 const defaultArgs = {
-  theme,
   children: [
-    <Input type='text' placeholder='Search' theme={theme} />,
-    <Button variant='primary' theme={theme}>
-      Search
-    </Button>,
+    <Input type='text' placeholder='Search' />,
+    <Button variant='primary'>Search</Button>,
   ],
 };
 

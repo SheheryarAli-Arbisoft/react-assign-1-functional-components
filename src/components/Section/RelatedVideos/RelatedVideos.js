@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { RelatedVideos as CustomRelatedVideos } from './styled';
-
 import { propTypes, defaultProps } from './props';
 
 export const RelatedVideos = ({ children }) => {

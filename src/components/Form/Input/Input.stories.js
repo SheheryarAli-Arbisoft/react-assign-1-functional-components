@@ -1,6 +1,5 @@
 import React from 'react';
 import { Input } from './Input';
-import { theme } from '../../../theme';
 
 export default {
   title: 'Input',
@@ -10,7 +9,6 @@ export default {
 const Template = args => <Input {...args} />;
 
 const defaultArgs = {
-  theme,
   type: 'text',
   placeholder: 'Name',
 };

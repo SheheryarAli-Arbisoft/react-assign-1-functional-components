@@ -3,8 +3,7 @@ import { List } from './List';
 import { ListItem } from './ListItem';
 import { ListItemContent } from './ListItemContent';
 import { Thumbnail } from '../Thumbnail';
-import { Title, SubTitle, Description } from '../Text';
-import { theme } from '../../theme';
+import { Text } from '../Text';
 
 export default {
   title: 'List',
@@ -13,36 +12,28 @@ export default {
 
 const Template = args => <List {...args} />;
 
-const defaultArgs = {
-  theme,
-};
-
 export const Empty = Template.bind({});
-Empty.args = {
-  ...defaultArgs,
-};
 
 const getListItem = (small = false) => {
   return (
-    <ListItem theme={theme} small={small}>
+    <ListItem small={small}>
       <Thumbnail
-        theme={theme}
         small={small}
         src='https://cimg1.ibsrv.net/ibimg/hgm/1024x576-1/100/722/2020-ford-shelby-gt500-dragon-snake-concept_100722933.jpg'
       />
-      <ListItemContent theme={theme} small={small}>
-        <Title theme={theme} small={small}>
+      <ListItemContent small={small}>
+        <Text variant='title' small={small}>
           Video Title
-        </Title>
+        </Text>
         <div>
-          <SubTitle theme={theme} small={small}>
+          <Text variant='subtitle' small={small}>
             Channel name
-          </SubTitle>
-          <SubTitle theme={theme} small={small}>
+          </Text>
+          <Text variant='subtitle' small={small}>
             1 year ago
-          </SubTitle>
+          </Text>
         </div>
-        <Description theme={theme} small={small}>
+        <Text variant='description' small={small}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum at
           odio ipsam nobis officia cum vel sit totam quaerat iusto ex aperiam
           ipsa distinctio qui expedita reprehenderit, soluta vitae voluptate
@@ -55,7 +46,7 @@ const getListItem = (small = false) => {
           iste repudiandae corrupti voluptates aspernatur reprehenderit cum ut
           odit inventore dolorum fugiat, nam, libero necessitatibus dignissimos
           delectus?
-        </Description>
+        </Text>
       </ListItemContent>
     </ListItem>
   );
@@ -63,18 +54,15 @@ const getListItem = (small = false) => {
 
 export const SingleItem = Template.bind({});
 SingleItem.args = {
-  ...defaultArgs,
   children: [getListItem()],
 };
 
 export const MultipleItems = Template.bind({});
 MultipleItems.args = {
-  ...defaultArgs,
   children: [getListItem(), getListItem(), getListItem()],
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  ...defaultArgs,
   children: [getListItem(true), getListItem(true), getListItem(true)],
 };
