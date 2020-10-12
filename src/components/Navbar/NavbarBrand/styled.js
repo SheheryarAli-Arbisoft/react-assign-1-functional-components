@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NavbarBrand = styled.div`
   padding-left: ${({ theme }) => theme.spacing.large};
-  color: ${({ theme }) => theme.color.text.inverted};
+  color: ${({ theme }) => theme.colors.invertedTextColor};
   font-size: 18px;
   cursor: pointer;
 

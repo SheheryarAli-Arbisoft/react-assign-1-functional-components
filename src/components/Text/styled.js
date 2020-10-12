@@ -36,7 +36,7 @@ const Heading = styled.div`
 `;
 
 const Title = styled.div`
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.colors.primaryTextColor};
   font-size: ${({ theme, small }) =>
     small ? theme.size.text.default : theme.size.text.large};
   font-weight: bold;
@@ -48,7 +48,7 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
-  color: ${({ theme }) => theme.color.text.secondary};
+  color: ${({ theme }) => theme.colors.secondaryTextColor};
   font-size: ${({ theme, small }) =>
     small ? theme.size.text.small : theme.size.text.medium};
   margin-bottom: ${({ theme, small }) =>
@@ -58,7 +58,7 @@ const SubTitle = styled.div`
 const Description = styled.div`
   font-size: ${({ theme, small }) =>
     small ? theme.size.text.small : theme.size.text.medium};
-  color: ${({ theme }) => theme.color.text.primary};
+  color: ${({ theme }) => theme.colors.primaryTextColor};
   white-space: ${({ full }) => (full ? 'none' : 'nowrap')};
   overflow: hidden;
   text-overflow: ellipsis;

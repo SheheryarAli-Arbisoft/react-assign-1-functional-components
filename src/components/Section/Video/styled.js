@@ -6,12 +6,12 @@ export const Video = styled.div`
   width: 65%;
   min-height: 100px;
   height: fit-content;
-  background-color: ${({ theme }) => theme.color.card.background};
+  background-color: ${({ theme }) => theme.card.background};
   border-style: solid;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.color.card.border};
+  border-color: ${({ theme }) => theme.card.border};
   border-radius: 5px;
-  box-shadow: 0 0 10px 1px ${({ theme }) => theme.color.card.border};
+  box-shadow: 0 0 10px 1px ${({ theme }) => theme.card.border};
 
   & > div:nth-child(3) {
     display: flex;

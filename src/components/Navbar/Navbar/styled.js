@@ -7,5 +7,5 @@ export const Navbar = styled.div`
   min-height: 56px;
   display: flex;
   align-items: center;
-  background-color: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.colors.primaryColor};
 `;
