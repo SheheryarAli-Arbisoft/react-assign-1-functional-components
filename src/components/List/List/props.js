@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
+  children: PropTypes.array,
   small: PropTypes.bool,
-  children: PropTypes.object,
 };
 
 const defaultProps = {
+  children: [],
   small: false,
 };
 

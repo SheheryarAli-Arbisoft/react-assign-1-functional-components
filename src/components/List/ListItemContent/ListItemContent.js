@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { ListItemContent as CustomListItemContent } from './styled';
-
 import { propTypes, defaultProps } from './props';
 
 export const ListItemContent = ({ children, ...rest }) => {
