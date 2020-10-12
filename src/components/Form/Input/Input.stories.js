@@ -23,3 +23,9 @@ Large.args = {
   ...defaultArgs,
   size: 'large',
 };
+
+export const Error = Template.bind({});
+Error.args = {
+  ...defaultArgs,
+  error: true,
+};

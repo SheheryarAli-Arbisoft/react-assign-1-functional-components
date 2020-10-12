@@ -7,6 +7,7 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
+  border-color: ${({ error }) => (error ? '#ff0000' : 'inherit')};
   flex-grow: 1;
 `;
 
