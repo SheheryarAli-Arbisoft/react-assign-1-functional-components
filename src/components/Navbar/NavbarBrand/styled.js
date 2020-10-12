@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 
-const Navbar = styled.div`
-  position: fixed;
-  width: 100%;
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.primary};
-`;
-
-const NavbarBrand = styled.div`
+export const NavbarBrand = styled.div`
   padding-left: ${({ theme }) => theme.spacing.large};
   color: ${({ theme }) => theme.color.text.inverted};
   font-size: 18px;
@@ -24,5 +15,3 @@ const NavbarBrand = styled.div`
     color: inherit;
   }
 `;
-
-export { Navbar, NavbarBrand };

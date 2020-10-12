@@ -1,3 +1,3 @@
-export { VideoPlayerSection } from './VideoPlayerSection';
-export { VideoSection } from './VideoSection';
-export { RelatedVideosSection } from './RelatedVideosSection';
+export { VideoPlayer } from './VideoPlayer';
+export { Video } from './Video';
+export { RelatedVideos } from './RelatedVideos';

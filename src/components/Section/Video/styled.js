@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-export const VideoPlayerSection = styled.div`
-  display: flex;
-`;
-
-export const VideoSection = styled.div`
+export const Video = styled.div`
   box-sizing: border-box;
   padding: ${({ theme }) => theme.spacing.large};
   width: 65%;
@@ -26,9 +22,4 @@ export const VideoSection = styled.div`
   & > div:nth-child(3) > div {
     margin-right: ${({ theme }) => theme.spacing.xlarge};
   }
-`;
-
-export const RelatedVideosSection = styled.div`
-  width: 35%;
-  margin-left: ${({ theme }) => theme.spacing.medium};
 `;

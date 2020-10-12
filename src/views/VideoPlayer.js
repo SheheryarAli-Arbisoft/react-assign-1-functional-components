@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { VideosList } from './VideosList';
 import { Video } from './Video';
-import {
-  VideoPlayerSection,
-  VideoSection,
-  RelatedVideosSection,
-} from '../components/Section';
+import { VideoPlayer, Video, RelatedVideos } from '../components/Section';
 import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
