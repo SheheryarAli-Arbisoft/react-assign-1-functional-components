@@ -8,6 +8,7 @@ export default {
 };
 
 const Template = args => <Input {...args} />;
+
 const defaultArgs = {
   theme,
   type: 'text',

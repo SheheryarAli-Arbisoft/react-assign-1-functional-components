@@ -12,7 +12,7 @@ export const VideoListItem = ({ video, small }) => {
     <Fragment>
       <Link to={`/${video.id}`}>
         <ListItem small={small}>
-          <Thumbnail alt='' src={video.thumbnails.high.url} small={small} />
+          <Thumbnail src={video.thumbnails.high.url} small={small} />
           <ListItemContent small={small}>
             <Title small={small}>{video.title}</Title>
             <div>

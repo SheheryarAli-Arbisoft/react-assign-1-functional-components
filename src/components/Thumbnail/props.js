@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
+  alt: PropTypes.string,
   small: PropTypes.bool,
 };
 
 const defaultProps = {
+  src: '',
+  alt: '',
   small: false,
 };
 
