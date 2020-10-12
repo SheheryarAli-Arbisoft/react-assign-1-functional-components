@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.string,
   variant: PropTypes.string,
   size: PropTypes.string,
 };
 
 const defaultProps = {
+  children: '',
   variant: '',
   size: 'normal',
 };

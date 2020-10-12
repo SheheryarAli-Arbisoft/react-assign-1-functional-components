@@ -7,13 +7,11 @@ export default {
   component: Button,
 };
 
-const Template = args => {
-  return <Button {...args} />;
-};
+const Template = args => <Button {...args} />;
 
 const defaultArgs = {
   theme,
-  children: [<div>Button</div>],
+  children: 'Button',
 };
 
 export const Normal = Template.bind({});
