@@ -32,7 +32,9 @@ const SearchFormComponent = ({ history }) => {
           value={description}
           onChange={onChange}
         />
-        <Button type='submit'>Search</Button>
+        <Button variant='primary' type='submit'>
+          Search
+        </Button>
       </Form>
     </Fragment>
   );

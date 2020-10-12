@@ -2,23 +2,26 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   box-sizing: border-box;
-  padding: ${({ theme }) => theme.spacing.default};
-  font-size: ${({ theme }) => theme.size.text.default};
+  padding: ${({ theme, size }) => theme.button.getSpacing(size)};
+  font-size: ${({ theme, size }) => theme.button.getTextSize(size)};
   text-transform: uppercase;
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
   cursor: pointer;
-  color: ${({ theme }) => theme.color.text.inverted};
-  background-color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme, variant }) => theme.button.getTextColor(variant)};
+  background-color: ${({ theme, variant }) =>
+    theme.button.getBackgroundColor(variant)};
+  transition: background-color 200ms ease-in-out;
 
   &:focus {
     outline: none;
   }
 
   &: hover {
-    background-color: ${({ theme }) => theme.color.hover};
+    background-color: ${({ theme, variant }) =>
+      theme.button.getHoverColor(variant)};
   }
 `;
 
