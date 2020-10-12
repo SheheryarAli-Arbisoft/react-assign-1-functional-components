@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Input as CustomInput } from './styled';
-
 import { propTypes, defaultProps } from './props';
 
 export const Input = ({ ...rest }) => {

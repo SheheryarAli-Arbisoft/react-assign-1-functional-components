@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Container as CustomContainer } from './styled';
-
 import { propTypes, defaultProps } from './props';
 
 export const Container = ({ children, ...rest }) => {
