@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Thumbnail } from '../components/Thumbnail';
 import { ListItem, ListItemContent } from '../components/List';
-import { Title, SubTitle, Description } from '../components/Text';
+import { Text } from '../components/Text';
 import { getFormattedTime } from '../utils';
 
 export const VideoListItem = ({ video, small }) => {
@@ -14,14 +14,20 @@ export const VideoListItem = ({ video, small }) => {
         <ListItem small={small}>
           <Thumbnail src={video.thumbnails.high.url} small={small} />
           <ListItemContent small={small}>
-            <Title small={small}>{video.title}</Title>
+            <Text variant='title' small={small}>
+              {video.title}
+            </Text>
             <div>
-              <SubTitle small={small}>{video.channelTitle}</SubTitle>
-              <SubTitle small={small}>
+              <Text variant='subtitle' small={small}>
+                {video.channelTitle}
+              </Text>
+              <Text variant='subtitle' small={small}>
                 {getFormattedTime(video.publishedAt)}
-              </SubTitle>
+              </Text>
             </div>
-            <Description small={small}>{video.description}</Description>
+            <Text variant='description' small={small}>
+              {video.description}
+            </Text>
           </ListItemContent>
         </ListItem>
       </Link>

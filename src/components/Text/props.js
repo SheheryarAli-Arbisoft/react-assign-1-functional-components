@@ -1,27 +1,16 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
+  children: PropTypes.any,
   small: PropTypes.bool,
-  children: PropTypes.object,
-};
-
-const descriptionPropTypes = {
-  ...propTypes,
   full: PropTypes.bool,
+  variant: PropTypes.string,
 };
 
 const defaultProps = {
   small: false,
-};
-
-const descriptionDefaultProps = {
-  ...defaultProps,
   full: false,
+  variant: '',
 };
 
-export {
-  propTypes,
-  descriptionPropTypes,
-  defaultProps,
-  descriptionDefaultProps,
-};
+export { propTypes, defaultProps };

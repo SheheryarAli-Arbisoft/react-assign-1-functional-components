@@ -3,7 +3,7 @@ import parser from 'html-react-parser';
 import { Video as CustomVideo } from './styled';
 import { propTypes, defaultProps } from './props';
 import { Frame } from '../../Frame';
-import { Title, SubTitle, Description } from '../../Text';
+import { Text } from '../../Text';
 import { getFormattedTime } from '../../../utils';
 
 export const Video = ({ video }) => {
@@ -12,14 +12,16 @@ export const Video = ({ video }) => {
   return (
     <CustomVideo>
       <Frame title={title} embedHtml={embedHtml} />
-      <Title>{title}</Title>
+      <Text variant='title' full>
+        {title}
+      </Text>
       <div>
-        <SubTitle>{channelTitle}</SubTitle>
-        <SubTitle>{getFormattedTime(publishedAt)}</SubTitle>
+        <Text variant='subtitle'>{channelTitle}</Text>
+        <Text variant='subtitle'>{getFormattedTime(publishedAt)}</Text>
       </div>
-      <Description full>
+      <Text variant='description' full>
         {parser(description.replaceAll('\n', '<br />'))}
-      </Description>
+      </Text>
     </CustomVideo>
   );
 };

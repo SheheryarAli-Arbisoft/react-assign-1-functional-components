@@ -7,7 +7,7 @@ import { SearchForm } from './views/SearchForm';
 import { VideosList } from './views/VideosList';
 import { VideoPlayer } from './views/VideoPlayer';
 import { Container } from './components/Container';
-import { Heading } from './components/Text';
+import { Text } from './components/Text';
 import { store } from './store';
 import { theme } from './theme';
 
@@ -21,10 +21,10 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <Navbar />
           <Container>
-            <Heading>
+            <Text variant='heading'>
               <i className='fab fa-youtube' />
               Youtube Video Player
-            </Heading>
+            </Text>
             <SearchForm />
             <Switch>
               <Route exact path='/' component={VideosList} />

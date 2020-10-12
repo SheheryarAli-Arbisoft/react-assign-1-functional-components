@@ -4,6 +4,9 @@ const secondaryColor = '#39a113';
 const infoColor = '#1bacbf';
 const dangerColor = '#bf441b';
 const defaultColor = '#ededed';
+const primaryTextColor = '#000000';
+const secondaryTextColor = '#5a5a5a';
+const headingTextColor = '#ff0000';
 
 // Hover colors
 const primaryHoverColor = '#0b5599';
@@ -24,6 +27,10 @@ const textSize = {
   small: '12px',
   normal: '15px',
   large: '18px',
+  heading: '54px',
+  title: '26px',
+  subtitle: '18px',
+  description: '18px',
 };
 
 export const theme = {
@@ -108,8 +115,8 @@ export const theme = {
     },
   },
 
-  // Theming options for text
-  text: {
+  // Theming options for input
+  input: {
     getSize(size) {
       switch (size) {
         case 'normal':
@@ -128,6 +135,51 @@ export const theme = {
           return spacing.large;
         default:
           return '0';
+      }
+    },
+  },
+
+  // Theming options for text
+  text: {
+    getDisplay(variant) {
+      switch (variant) {
+        case 'heading':
+          return 'flex';
+        default:
+          return 'block';
+      }
+    },
+    getColor(variant) {
+      switch (variant) {
+        case 'heading':
+          return headingTextColor;
+        case 'secondary':
+          return secondaryTextColor;
+        default:
+          return primaryTextColor;
+      }
+    },
+    getSize(variant, small) {
+      switch (variant) {
+        case 'heading':
+          return textSize.heading;
+        case 'title':
+          return small ? textSize.normal : textSize.title;
+        case 'subtitle':
+          return small ? textSize.small : textSize.subtitle;
+        case 'description':
+          return small ? textSize.small : textSize.description;
+        default:
+          return '0';
+      }
+    },
+    getWeight(variant) {
+      switch (variant) {
+        case 'heading':
+        case 'title':
+          return 'bold';
+        default:
+          return 'none';
       }
     },
   },
