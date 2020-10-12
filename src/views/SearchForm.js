@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Form } from '../components/Form';
-import { Input } from '../components/Input';
+import { Form, Input } from '../components/Form';
 import { Button } from '../components/Button';
 
 const SearchFormComponent = ({ history }) => {

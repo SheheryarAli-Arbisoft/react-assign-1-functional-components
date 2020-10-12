@@ -12,12 +12,10 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [thunk, sagaMiddleware];
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middlewares))
 );
 
 sagaMiddleware.run(weatherSaga);
-
-export default store;

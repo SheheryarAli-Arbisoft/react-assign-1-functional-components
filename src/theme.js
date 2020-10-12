@@ -26,7 +26,7 @@ const textSize = {
   large: '18px',
 };
 
-const theme = {
+export const theme = {
   color: {
     primary: '#276ad6',
     hover: '#1a56b8',
@@ -108,6 +108,30 @@ const theme = {
     },
   },
 
+  // Theming options for text
+  text: {
+    getSize(size) {
+      switch (size) {
+        case 'normal':
+          return textSize.normal;
+        case 'large':
+          return textSize.large;
+        default:
+          return '0';
+      }
+    },
+    getSpacing(size) {
+      switch (size) {
+        case 'normal':
+          return spacing.normal;
+        case 'large':
+          return spacing.large;
+        default:
+          return '0';
+      }
+    },
+  },
+
   spacing: {
     small: '6px',
     default: '8px',
@@ -135,5 +159,3 @@ const theme = {
     },
   },
 };
-
-export default theme;

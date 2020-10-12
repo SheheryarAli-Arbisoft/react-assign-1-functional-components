@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,5 +11,3 @@ const Form = styled.form`
     margin-right: ${({ theme }) => theme.spacing.default};
   }
 `;
-
-export { Form };

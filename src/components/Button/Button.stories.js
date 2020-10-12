@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import theme from '../../theme';
+import { theme } from '../../theme';
 
 export default {
   title: 'Button',

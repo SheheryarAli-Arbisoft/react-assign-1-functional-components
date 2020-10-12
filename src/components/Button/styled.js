@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
   box-sizing: border-box;
   padding: ${({ theme, size }) => theme.button.getSpacing(size)};
   font-size: ${({ theme, size }) => theme.button.getTextSize(size)};
@@ -24,5 +24,3 @@ const Button = styled.button`
       theme.button.getHoverColor(variant)};
   }
 `;
-
-export { Button };
