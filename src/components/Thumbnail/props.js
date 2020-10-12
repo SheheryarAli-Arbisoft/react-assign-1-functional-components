@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   small: PropTypes.bool,
 };
 
-const defaultProps = {
+export const defaultProps = {
   src: '',
   alt: '',
   small: false,
 };
-
-export { propTypes, defaultProps };

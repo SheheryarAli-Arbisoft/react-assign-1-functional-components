@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   video: PropTypes.object.isRequired,
 };
 
-const defaultProps = {};
-
-export { propTypes, defaultProps };
+export const defaultProps = {};

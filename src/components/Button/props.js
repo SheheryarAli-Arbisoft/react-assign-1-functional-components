@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   children: PropTypes.string,
   variant: PropTypes.string,
   size: PropTypes.string,
 };
 
-const defaultProps = {
+export const defaultProps = {
   children: '',
   variant: '',
   size: 'normal',
 };
-
-export { propTypes, defaultProps };

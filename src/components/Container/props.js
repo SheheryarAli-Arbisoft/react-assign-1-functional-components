@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   children: PropTypes.any,
   fluid: PropTypes.bool,
 };
 
-const defaultProps = {
+export const defaultProps = {
   children: '',
   fluid: false,
 };
-
-export { propTypes, defaultProps };

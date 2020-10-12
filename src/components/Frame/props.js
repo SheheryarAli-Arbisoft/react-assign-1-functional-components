@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   title: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
@@ -10,7 +10,7 @@ const propTypes = {
   allowFullScreen: PropTypes.bool,
 };
 
-const defaultProps = {
+export const defaultProps = {
   title: '',
   width: '100%',
   height: '500px',
@@ -19,5 +19,3 @@ const defaultProps = {
     'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
   allowFullScreen: true,
 };
-
-export { propTypes, defaultProps };

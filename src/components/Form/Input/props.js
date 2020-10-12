@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   size: PropTypes.string,
   error: PropTypes.bool,
 };
 
-const defaultProps = {
+export const defaultProps = {
   size: 'normal',
   error: false,
 };
-
-export { propTypes, defaultProps };

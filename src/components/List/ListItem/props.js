@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
+export const propTypes = {
   children: PropTypes.array,
   small: PropTypes.bool,
   video: PropTypes.object.isRequired,
 };
 
-const defaultProps = {
+export const defaultProps = {
   children: [],
   small: false,
 };
-
-export { propTypes, defaultProps };
