@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { Navbar } from './views/Navbar';
 import { SearchForm } from './views/SearchForm';
-import { VideosList } from './views/VideosList';
+import { VideoList } from './views/VideoList';
 import { VideoPlayer } from './views/VideoPlayer';
 import { Container } from './components/Container';
 import { Text } from './components/Text';
@@ -27,7 +27,7 @@ const App = () => {
             </Text>
             <SearchForm />
             <Switch>
-              <Route exact path='/' component={VideosList} />
+              <Route exact path='/' component={VideoList} />
               <Route exact path='/:id' component={VideoPlayer} />
             </Switch>
           </Container>

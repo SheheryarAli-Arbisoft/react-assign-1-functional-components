@@ -1,6 +1,5 @@
 import React from 'react';
 import { Frame } from './Frame';
-import { theme } from '../../theme';
 
 export default {
   title: 'Frame',

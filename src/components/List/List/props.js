@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
   small: PropTypes.bool,
 };
 

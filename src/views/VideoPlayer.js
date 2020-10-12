@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { VideosList } from './VideosList';
+import { VideoList } from './VideoList';
 import {
   VideoPlayer as CustomVideoPlayer,
   Video,
@@ -10,18 +10,20 @@ import {
 import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
-export const VideoPlayer = ({ match }) => {
+export const VideoPlayer = () => {
+  const { id } = useParams();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     // Getting the current video
-    dispatch(loadVideo(match.params.id));
+    dispatch(loadVideo(id));
 
     // Getting the related videos
-    dispatch(loadAllRelatedVideos(match.params.id));
+    dispatch(loadAllRelatedVideos(id));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [match.params.id]);
+  }, [id]);
 
   const loading = useSelector(getLoadingSelector);
   const video = useSelector(getVideoSelector);
@@ -33,14 +35,9 @@ export const VideoPlayer = ({ match }) => {
         {!loading && video && <Video video={video} />}
 
         <RelatedVideos>
-          <VideosList small />
+          <VideoList small />
         </RelatedVideos>
       </CustomVideoPlayer>
     </Fragment>
   );
-};
-
-VideoPlayer.propTypes = {
-  /* eslint-disable react/forbid-prop-types */
-  match: PropTypes.object.isRequired,
 };

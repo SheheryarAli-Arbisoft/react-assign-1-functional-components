@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.any,
   fluid: PropTypes.bool,
 };
 
 const defaultProps = {
-  children: [],
+  children: '',
   fluid: false,
 };
 

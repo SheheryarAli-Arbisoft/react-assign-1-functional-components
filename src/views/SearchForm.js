@@ -1,15 +1,16 @@
-import React, { Fragment, useState } from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form, Input } from '../components/Form';
 import { Button } from '../components/Button';
 
-const SearchFormComponent = ({ history }) => {
+export const SearchForm = () => {
   const [description, setDescription] = useState('');
 
   const onChange = e => {
     setDescription(e.target.value);
   };
+
+  const history = useHistory();
 
   const onSubmit = e => {
     e.preventDefault();
@@ -22,26 +23,17 @@ const SearchFormComponent = ({ history }) => {
 
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
-    <Fragment>
-      <Form onSubmit={onSubmit}>
-        <Input
-          type='text'
-          placeholder='Search'
-          name='description'
-          value={description}
-          onChange={onChange}
-        />
-        <Button variant='primary' type='submit'>
-          Search
-        </Button>
-      </Form>
-    </Fragment>
+    <Form onSubmit={onSubmit}>
+      <Input
+        type='text'
+        placeholder='Search'
+        name='description'
+        value={description}
+        onChange={onChange}
+      />
+      <Button variant='primary' type='submit'>
+        Search
+      </Button>
+    </Form>
   );
 };
-
-SearchFormComponent.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  history: PropTypes.object.isRequired,
-};
-
-export const SearchForm = withRouter(SearchFormComponent);

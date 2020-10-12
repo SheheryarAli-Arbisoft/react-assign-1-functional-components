@@ -1,13 +1,14 @@
 import React, { Fragment, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useLocation, Link } from 'react-router-dom';
 import queryString from 'query-string';
 import { useSelector, useDispatch } from 'react-redux';
-import { VideoListItem } from './VideoListItem';
-import { List } from '../components/List';
+import { List, ListItem } from '../components/List';
 import { getLoadingSelector, getVideosSelector } from '../selectors/video';
 import { loadAllVideos } from '../actions/weather';
 
-export const VideosList = ({ small, location }) => {
+export const VideoList = ({ ...rest }) => {
+  const location = useLocation();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,19 +30,15 @@ export const VideosList = ({ small, location }) => {
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
     <Fragment>
-      <List small={small}>
+      <List {...rest}>
         {!loading &&
           videos.length > 0 &&
           videos.map(video => (
-            <VideoListItem key={video.id} video={video} small={small} />
+            <Link key={video.id} to={`/${video.id}`}>
+              <ListItem video={video} {...rest} />
+            </Link>
           ))}
       </List>
     </Fragment>
   );
-};
-
-VideosList.propTypes = {
-  /* eslint-disable react/forbid-prop-types, react/require-default-props */
-  small: PropTypes.bool,
-  location: PropTypes.object,
 };
