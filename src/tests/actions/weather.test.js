@@ -16,7 +16,6 @@ describe('testing weather action creators', () => {
       type: LOAD_VIDEO,
       payload: id,
     };
-
     expect(loadVideo(id)).toEqual(expectedAction);
   });
 
@@ -26,7 +25,6 @@ describe('testing weather action creators', () => {
       type: LOAD_ALL_VIDEOS,
       payload: description,
     };
-
     expect(loadAllVideos(description)).toEqual(expectedAction);
   });
 
@@ -36,7 +34,6 @@ describe('testing weather action creators', () => {
       type: LOAD_ALL_RELATED_VIDEOS,
       payload: id,
     };
-
     expect(loadAllRelatedVideos(id)).toEqual(expectedAction);
   });
 });

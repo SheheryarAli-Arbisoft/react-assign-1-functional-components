@@ -14,7 +14,6 @@ describe('testing video reducer', () => {
       loading: true,
       errors: null,
     };
-
     expect(video(undefined, {})).toEqual(expectedState);
   });
 
@@ -29,19 +28,16 @@ describe('testing video reducer', () => {
         channelTitle: 'Programming with Mosh',
       },
     ];
-
     const action = {
       type: ALL_VIDEOS_LOADED,
       payload: videos,
     };
-
     const expectedState = {
       video: null,
       videos,
       loading: false,
       errors: null,
     };
-
     expect(
       video(
         {
@@ -53,7 +49,6 @@ describe('testing video reducer', () => {
         action
       )
     ).toEqual(expectedState);
-
     expect(
       video(
         {
@@ -85,19 +80,16 @@ describe('testing video reducer', () => {
       title: '.Net Core MVC',
       channelTitle: 'Programming with Mosh',
     };
-
     const action = {
       type: VIDEO_LOADED,
       payload: videoObj,
     };
-
     const expectedState = {
       video: videoObj,
       videos: [],
       loading: false,
       errors: null,
     };
-
     expect(
       video(
         {
@@ -109,7 +101,6 @@ describe('testing video reducer', () => {
         action
       )
     ).toEqual(expectedState);
-
     expect(
       video(
         {
@@ -137,19 +128,16 @@ describe('testing video reducer', () => {
         channelTitle: 'Programming with Mosh',
       },
     ];
-
     const action = {
       type: ALL_RELATED_VIDEOS_LOADED,
       payload: videos,
     };
-
     const expectedState = {
       video: null,
       videos,
       loading: false,
       errors: null,
     };
-
     expect(
       video(
         {
@@ -161,7 +149,6 @@ describe('testing video reducer', () => {
         action
       )
     ).toEqual(expectedState);
-
     expect(
       video(
         {
@@ -193,19 +180,16 @@ describe('testing video reducer', () => {
       msg: 'Internal Server Error',
       status: 500,
     };
-
     const action = {
       type: VIDEO_ERROR,
       payload: errors,
     };
-
     const expectedState = {
       video: null,
       videos: [],
       loading: false,
       errors,
     };
-
     expect(
       video(
         {
@@ -217,7 +201,6 @@ describe('testing video reducer', () => {
         action
       )
     ).toEqual(expectedState);
-
     expect(
       video(
         {
