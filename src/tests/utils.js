@@ -5,11 +5,11 @@ import { ThemeProvider } from 'styled-components';
 import { store } from '../store';
 import { theme } from '../theme';
 
-export const connectProviders = Component => (
+export const connectProviders = (Component, props = {}) => (
   <Router>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Component />
+        <Component {...props} />
       </ThemeProvider>
     </Provider>
   </Router>
