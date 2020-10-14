@@ -20,7 +20,7 @@ export const Video = ({ video }) => {
         <Text variant='subtitle'>{getFormattedTime(publishedAt)}</Text>
       </div>
       <Text variant='description' full>
-        {parser(description.replaceAll('\n', '<br />'))}
+        {parser(description.replace('\n', '<br />'))}
       </Text>
     </CustomVideo>
   );
