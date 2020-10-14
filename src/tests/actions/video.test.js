@@ -7,9 +7,9 @@ import {
   loadVideo,
   loadAllVideos,
   loadAllRelatedVideos,
-} from '../../actions/weather';
+} from '../../actions/video';
 
-describe('testing weather action creators', () => {
+describe('testing the video action creators', () => {
   test('should return an action to load a single video', () => {
     const id = 'abc123';
     const expectedAction = {

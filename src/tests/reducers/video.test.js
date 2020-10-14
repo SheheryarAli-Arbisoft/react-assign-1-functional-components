@@ -6,7 +6,7 @@ import {
 } from '../../actions/types';
 import video from '../../reducers/video';
 
-describe('testing video reducer', () => {
+describe('testing the video reducer', () => {
   test('should return the default state', () => {
     const expectedState = {
       video: null,

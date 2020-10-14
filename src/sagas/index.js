@@ -1,1 +1,1 @@
-export { weatherSaga } from './weather';
+export { videoSaga } from './video';

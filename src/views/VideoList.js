@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import { useSelector, useDispatch } from 'react-redux';
 import { List, ListItem } from '../components/List';
 import { getLoadingSelector, getVideosSelector } from '../selectors/video';
-import { loadAllVideos } from '../actions/weather';
+import { loadAllVideos } from '../actions/video';
 
 export const VideoList = ({ ...rest }) => {
   const location = useLocation();

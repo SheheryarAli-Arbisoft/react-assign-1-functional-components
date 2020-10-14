@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './reducers/index';
-import { weatherSaga } from './sagas';
+import { videoSaga } from './sagas';
 
 const initialState = {};
 
@@ -18,4 +18,4 @@ export const store = createStore(
   composeWithDevTools(applyMiddleware(...middlewares))
 );
 
-sagaMiddleware.run(weatherSaga);
+sagaMiddleware.run(videoSaga);

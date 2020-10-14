@@ -7,7 +7,7 @@ import {
   Video,
   RelatedVideos,
 } from '../components/Section';
-import { loadVideo, loadAllRelatedVideos } from '../actions/weather';
+import { loadVideo, loadAllRelatedVideos } from '../actions/video';
 import { getLoadingSelector, getVideoSelector } from '../selectors/video';
 
 export const VideoPlayer = () => {

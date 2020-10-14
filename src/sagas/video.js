@@ -13,12 +13,12 @@ import {
 const API_KEY = 'AIzaSyA6vjCwXxs-wFd7_Hr0eFA6YuHYX7INahM';
 
 // Generate the search url
-const generateSearchUrl = description => {
+export const generateSearchUrl = description => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${description}&type=video&key=${API_KEY}`;
 };
 
 // Get required data from response
-const getRequiredVideosData = response => {
+export const getRequiredVideosData = response => {
   let result = [];
 
   response.items.forEach(item => {
@@ -51,7 +51,7 @@ const getRequiredVideosData = response => {
 };
 
 // This is the worker for loading all the videos related to the description
-function* getAllVideos(action) {
+export function* getAllVideos(action) {
   const { payload: description } = action;
 
   try {
@@ -66,8 +66,6 @@ function* getAllVideos(action) {
       payload: result,
     });
   } catch (err) {
-    console.log(err.message);
-
     yield put({
       type: VIDEO_ERROR,
       payload: err,
@@ -76,12 +74,12 @@ function* getAllVideos(action) {
 }
 
 // Generate realted videos url
-const generateRelatedVideosUrl = id => {
+export const generateRelatedVideosUrl = id => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=26&relatedToVideoId=${id}&type=video&key=${API_KEY}`;
 };
 
 // Get all videos related to a video
-function* getAllRelatedVideos(action) {
+export function* getAllRelatedVideos(action) {
   const { payload: id } = action;
 
   try {
@@ -104,12 +102,12 @@ function* getAllRelatedVideos(action) {
 }
 
 // Generate single video url
-const generateSingleVideoUrl = id => {
+export const generateSingleVideoUrl = id => {
   return `https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cplayer&id=${id}&key=${API_KEY}`;
 };
 
 // Get required single video data from response
-const getRequiredSingleVideoData = response => {
+export const getRequiredSingleVideoData = response => {
   // Destructuring the required fields
   const { title, channelTitle, publishedAt, description } = response.snippet;
 
@@ -125,7 +123,7 @@ const getRequiredSingleVideoData = response => {
 };
 
 // Get a single video
-function* getVideo(action) {
+export function* getVideo(action) {
   const { payload: id } = action;
 
   try {
@@ -148,7 +146,7 @@ function* getVideo(action) {
 }
 
 // This is the watcher which listens for all the different types of actions
-export function* weatherSaga() {
+export function* videoSaga() {
   yield takeEvery(LOAD_ALL_VIDEOS, getAllVideos);
   yield takeEvery(LOAD_ALL_RELATED_VIDEOS, getAllRelatedVideos);
   yield takeEvery(LOAD_VIDEO, getVideo);
