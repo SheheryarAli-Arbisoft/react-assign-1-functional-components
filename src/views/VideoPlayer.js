@@ -33,7 +33,6 @@ export const VideoPlayer = () => {
     <Fragment>
       <CustomVideoPlayer>
         {!loading && video && <Video video={video} />}
-
         <RelatedVideos>
           <VideoList small />
         </RelatedVideos>

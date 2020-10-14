@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import queryString from 'query-string';
 import { useSelector, useDispatch } from 'react-redux';
@@ -29,16 +29,14 @@ export const VideoList = ({ ...rest }) => {
 
   return (
     /* eslint-disable react/jsx-filename-extension, react/jsx-fragments */
-    <Fragment>
-      <List {...rest}>
-        {!loading &&
-          videos.length > 0 &&
-          videos.map(video => (
-            <Link key={video.id} to={`/${video.id}`}>
-              <ListItem video={video} {...rest} />
-            </Link>
-          ))}
-      </List>
-    </Fragment>
+    <List {...rest}>
+      {!loading &&
+        videos.length > 0 &&
+        videos.map(video => (
+          <Link key={video.id} to={`/${video.id}`}>
+            <ListItem video={video} {...rest} />
+          </Link>
+        ))}
+    </List>
   );
 };

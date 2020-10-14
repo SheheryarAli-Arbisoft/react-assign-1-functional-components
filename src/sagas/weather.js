@@ -12,8 +12,6 @@ import {
 
 const API_KEY = 'AIzaSyA6vjCwXxs-wFd7_Hr0eFA6YuHYX7INahM';
 
-/* eslint-disable no-console */
-
 // Generate the search url
 const generateSearchUrl = description => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${description}&type=video&key=${API_KEY}`;
@@ -98,8 +96,6 @@ function* getAllRelatedVideos(action) {
       payload: result,
     });
   } catch (err) {
-    console.log(err.message);
-
     yield put({
       type: VIDEO_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
@@ -144,8 +140,6 @@ function* getVideo(action) {
       payload: result,
     });
   } catch (err) {
-    console.log(err.message);
-
     yield put({
       type: VIDEO_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
