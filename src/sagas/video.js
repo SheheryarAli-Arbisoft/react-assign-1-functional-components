@@ -10,12 +10,11 @@ import {
   VIDEO_ERROR,
 } from '../actions/types';
 
-const API_KEY = 'AIzaSyA6vjCwXxs-wFd7_Hr0eFA6YuHYX7INahM';
+export const API_KEY = 'AIzaSyA6vjCwXxs-wFd7_Hr0eFA6YuHYX7INahM';
 
 // Generate the search url
-export const generateSearchUrl = description => {
-  return `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${description}&type=video&key=${API_KEY}`;
-};
+export const generateSearchUrl = description =>
+  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${description}&type=video&key=${API_KEY}`;
 
 // Get required data from response
 export const getRequiredVideosData = response => {
@@ -51,7 +50,7 @@ export const getRequiredVideosData = response => {
 };
 
 // This is the worker for loading all the videos related to the description
-export function* getAllVideos(action) {
+function* getAllVideos(action) {
   const { payload: description } = action;
 
   try {
@@ -74,12 +73,11 @@ export function* getAllVideos(action) {
 }
 
 // Generate realted videos url
-export const generateRelatedVideosUrl = id => {
-  return `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=26&relatedToVideoId=${id}&type=video&key=${API_KEY}`;
-};
+export const generateRelatedVideosUrl = id =>
+  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=26&relatedToVideoId=${id}&type=video&key=${API_KEY}`;
 
 // Get all videos related to a video
-export function* getAllRelatedVideos(action) {
+function* getAllRelatedVideos(action) {
   const { payload: id } = action;
 
   try {
@@ -102,9 +100,8 @@ export function* getAllRelatedVideos(action) {
 }
 
 // Generate single video url
-export const generateSingleVideoUrl = id => {
-  return `https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cplayer&id=${id}&key=${API_KEY}`;
-};
+export const generateSingleVideoUrl = id =>
+  `https://www.googleapis.com/youtube/v3/videos?part=snippet%2Cplayer&id=${id}&key=${API_KEY}`;
 
 // Get required single video data from response
 export const getRequiredSingleVideoData = response => {
@@ -123,7 +120,7 @@ export const getRequiredSingleVideoData = response => {
 };
 
 // Get a single video
-export function* getVideo(action) {
+function* getVideo(action) {
   const { payload: id } = action;
 
   try {
