@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --watch --verbose",
+    "test": "jest --watch --verbose --silent",
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "storybook": "start-storybook -p 6006 -s public",
