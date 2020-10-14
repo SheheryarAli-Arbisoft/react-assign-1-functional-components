@@ -20,7 +20,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react", "react-hooks", "jest"],
   "rules": {
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": "off",
